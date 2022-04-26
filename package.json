@@ -1,0 +1,16 @@
+{
+  "name": "jogo-de-cartas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.0",
+    "dotenv": "^16.0.0"
+  }
+}
