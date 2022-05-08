@@ -1,42 +1,25 @@
 const { get } = require('axios')
 
-const URL_NEW_DECK = `https://deckofcardsapi.com/api/deck/new/`
+const { retirarCarta, reembaralharCartas } = require('./controller/services')
 
-const numCartas = 3
+//console.log(retirarCarta)
+const URL_NEW_DECK = `https://deckofcardsapi.com/api/deck/new/`
 
 async function novoDeck() {
 
    try {
-      const url_Deck = `${URL_NEW_DECK}`
-      const result = await get(url_Deck)
+      const numCartas = 4
+      const result = await get(URL_NEW_DECK)
       console.log(result.data)
-      const DECK = result.data.deck_id
-      //console.log(DECK);
-      //console.log(JSON.stringify(DECK))
 
-      const url_tirarCartas = `https://deckofcardsapi.com/api/deck/${DECK}/draw/?count=${numCartas}`
-      
-      const resultCartas = await get(url_tirarCartas)
-      console.log(resultCartas.data)
+      retirarCarta(result.data.deck_id, numCartas)
 
    } catch (error) {
-      console.error('Deu erro!', error);
+      console.error('Deu erro ao criar novo deck!', error);
    }
-   
+
 }
 
 novoDeck()
 
-/* 
-tirarCartas()
-
-async function tirarCartas() {
-
-   const tirar_Cartas = await axios.get(`https://deckofcardsapi.com/api/deck/${NEW_DECK}/draw/?count=2`)
-   const results = tirar_Cartas.data
-
-   console.log(results);
-
-} */
-
-
+//module.exports = {novoDeck}
