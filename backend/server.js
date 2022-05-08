@@ -1,10 +1,6 @@
-//const axios = require('axios');
-//const index = require('./../backend/controller/services/index');
 const { get } = require('axios')
 
 const URL_NEW_DECK = `https://deckofcardsapi.com/api/deck/new/`
-
-/* const URL_TIRAR_CARTAS = `https://deckofcardsapi.com/api/deck/${NEW_DECK}/draw/?count=2` */
 
 const numCartas = 3
 
