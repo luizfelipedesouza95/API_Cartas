@@ -1,25 +1,33 @@
-const { get } = require('axios')
+const express = require("express")
+const app = express()
+const newDeck = require("./controller/services/novoDeck")
+const tirarCarta = require("./controller/services/retirarCartas")
+const embCartas = require("./controller/services/reembaralhar")
+const bodyParser = require("body-parser")
 
-const { retirarCarta, reembaralharCartas } = require('./controller/services')
+app.use(bodyParser.urlencoded({ extended: true }))
+const PORT = 3003;
 
-//console.log(retirarCarta)
-const URL_NEW_DECK = `https://deckofcardsapi.com/api/deck/new/`
+//ROTA PARA CRIAR UM NOVO DECK
+app.get("/novoDeck", async (req, res) => {
+   res.send( await newDeck.novoDeck())
+})
 
-async function novoDeck() {
+//ROTA PARA TIRAR CARTAS DO DECK
+app.get("/tirarCartas", async (req, res) => {
+    const tireCartas = await tirarCarta.retirarCarta({
+      numCartas: req.body.numCartas,
+      deck_id: req.body.id
+  });
+    res.send(tireCartas);
+})
 
-   try {
-      const numCartas = 4
-      const result = await get(URL_NEW_DECK)
-      console.log(result.data)
+//ROTA PARA EMBARALHAR O DECK
+app.get("/embCartas", async (req, res) => {
+   const deck = await embCartas.reembaralharCartas({
+     deck_id: req.body.id
+ });
+   res.send(deck);
+})
 
-      retirarCarta(result.data.deck_id, numCartas)
-
-   } catch (error) {
-      console.error('Deu erro ao criar novo deck!', error);
-   }
-
-}
-
-novoDeck()
-
-//module.exports = {novoDeck}
+app.listen(PORT, () => { console.log(`SERVER ON PORT: http://localhost:3003/`) })
