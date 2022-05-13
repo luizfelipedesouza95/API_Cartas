@@ -10,8 +10,9 @@ const PORT = 3003;
 
 //ROTA PARA CRIAR UM NOVO DECK
 app.get("/novoDeck", async (req, res) => {
-   res.send( await newDeck.novoDeck())
-})
+   const dados = await newDeck.novoDeck()
+   res.send(dados)
+  })
 
 //ROTA PARA TIRAR CARTAS DO DECK
 app.get("/tirarCartas", async (req, res) => {
@@ -21,6 +22,7 @@ app.get("/tirarCartas", async (req, res) => {
   });
     res.send(tireCartas);
 })
+
 
 //ROTA PARA EMBARALHAR O DECK
 app.get("/embCartas", async (req, res) => {

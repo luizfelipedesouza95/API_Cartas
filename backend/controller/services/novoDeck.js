@@ -7,12 +7,12 @@ async function novoDeck() {
    try {
       console.log("Novo deck criado!")
       const result = await get(URL_NEW_DECK)
+      console.log(result.data);
       return result.data
 
    } catch (error) {
       console.error('Erro ao criar novo deck!', error);
    }
-
 }
 
 module.exports = {novoDeck}
