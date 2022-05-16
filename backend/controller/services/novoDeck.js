@@ -7,7 +7,7 @@ async function novoDeck() {
    try {
       console.log("Novo deck criado!")
       const result = await get(URL_NEW_DECK)
-      console.log(result.data);
+      //console.log(result.data);
       return result.data
 
    } catch (error) {

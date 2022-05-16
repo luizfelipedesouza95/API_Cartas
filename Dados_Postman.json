@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "892ea05a-6702-4e7c-ad5d-2237f619341d",
+		"name": "API Jogo de Cartas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Tirar Cartas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "numCartas",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "zo2fb6p867jl",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3003/tirarCartas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"tirarCartas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Novo Deck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/novoDeck",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"novoDeck"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Embaralhar Cartas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "zo2fb6p867jl",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3003/embCartas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"embCartas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Devolver Cartas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "zo2fb6p867jl",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3003/devolverCartas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"devolverCartas"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
