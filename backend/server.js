@@ -2,7 +2,7 @@ const express = require("express")
 const app = express()
 const newDeck = require("./controller/services/novoDeck")
 const tirarCarta = require("./controller/services/retirarCartas")
-const embCartas = require("./controller/services/reembaralhar")
+const embCartas = require("./controller/services/embaralhar")
 const devCartas = require("./controller/services/devolverCartas")
 const bodyParser = require("body-parser")
 
