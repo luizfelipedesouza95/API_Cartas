@@ -13,7 +13,7 @@ async function devolverCartas(deck) {
       return result.data
 
    } catch (error) {
-      console.error('Erro devolver cartas!', error);
+      console.error('Erro ao devolver cartas!', error);
    }
 }
 

@@ -1,8 +1,9 @@
 const { get } = require('axios')
 
-async function novoDeck() {
+async function novoDeck(deck_id) {
 
     const URL_NEW_DECK = `https://deckofcardsapi.com/api/deck/new/`
+    console.log(deck_id);
 
    try {
       console.log("Novo deck criado!")

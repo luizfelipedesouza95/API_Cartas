@@ -13,7 +13,7 @@ async function reembaralharCartas(deck) {
         return resultEmbCartas.data
 
     } catch (error) {
-        console.error('Erro ao reembaralhar cartas!', error);
+        console.error('Erro ao embaralhar cartas!', error);
     }
 }
 

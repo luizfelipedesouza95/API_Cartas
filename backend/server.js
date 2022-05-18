@@ -1,10 +1,10 @@
 const express = require("express")
 const app = express()
+const bodyParser = require("body-parser")
 const newDeck = require("./controller/services/novoDeck")
 const tirarCarta = require("./controller/services/retirarCartas")
 const embCartas = require("./controller/services/embaralhar")
 const devCartas = require("./controller/services/devolverCartas")
-const bodyParser = require("body-parser")
 
 app.use(bodyParser.urlencoded({ extended: true }))
 const PORT = 3003;
