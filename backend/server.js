@@ -1,7 +1,10 @@
+require("dotenv").config();
 const express = require("express")
 const app = express()
 const cors = require("cors")
+const path = require('path');
 const bodyParser = require("body-parser")
+const urlencoded = express.urlencoded({ extended: true })
 const newDeck = require("./controller/services/novoDeck")
 const tirarCarta = require("./controller/services/retirarCartas")
 const embCartas = require("./controller/services/embaralhar")
@@ -10,6 +13,14 @@ const descCartas = require("./controller/services/descarte")
 const embPilha = require("./controller/services/embPilha")
 const devCartasPilha = require("./controller/services/devolvePilha")
 
+const PORT = process.env.ROTA
+
+app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, '../frontend/pages'));
+
+app.use(express.static('../assets/css'))
+/* app.use('/css', express.static(path.join(__dirname, '../assets/css'))); */
+
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*")
   app.use(cors());
@@ -17,7 +28,11 @@ app.use((req, res, next) => {
 })
 
 app.use(bodyParser.urlencoded({ extended: true }))
-const PORT = 3003;
+
+//ROTA DA PAGINA INICIAL
+app.get("/", async (req, res) => {
+  res.render("./main", { pageInicial: './layouts/index.ejs' })
+})
 
 //ROTA PARA CRIAR UM NOVO DECK
 app.get("/novoDeck", async (req, res) => {
