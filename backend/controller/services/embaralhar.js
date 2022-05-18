@@ -1,3 +1,4 @@
+//EMBARALHA O DECK
 const { get } = require('axios')
 
 async function reembaralharCartas(deck) {

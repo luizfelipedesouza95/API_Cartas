@@ -1,3 +1,4 @@
+//DEVOLVE AS CARTAS TIRADAS DO DECK
 const { get } = require('axios')
 
 async function devolverCartas(deck) {
@@ -7,7 +8,7 @@ async function devolverCartas(deck) {
     const URL_DEVOLVE_CARTAS = `https://deckofcardsapi.com/api/deck/${deck_id}/return/`
 
    try {
-      console.log("Cartas devolvidas!")
+      console.log("Cartas devolvidas ao deck!")
       const result = await get(URL_DEVOLVE_CARTAS)
       //console.log(result.data);
       return result.data
