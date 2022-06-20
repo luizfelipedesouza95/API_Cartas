@@ -1,0 +1,21 @@
+#mesa{
+  background-color: green;
+  display: flex;
+  text-align: center;
+  width:auto;
+  height: auto;
+}
+#cartas{
+  background-color: blue;
+  display: inline-block;
+  text-align: center;
+  width: 100px;
+  height: 190px;
+  margin: 10px;
+}
+#pagInicial{
+  display: flex;
+  justify-content: center;
+  width:auto;
+  background-color: blueviolet;
+}
