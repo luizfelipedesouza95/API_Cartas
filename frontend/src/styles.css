@@ -1,21 +1,55 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
 #mesa{
-  background-color: green;
+  position: relative;
+  background-image: url(./../public/images/mesa.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   display: flex;
+  flex-flow: row;
+  height: 560px;
   text-align: center;
-  width:auto;
-  height: auto;
-}
-#cartas{
-  background-color: blue;
-  display: inline-block;
-  text-align: center;
-  width: 100px;
-  height: 190px;
-  margin: 10px;
-}
-#pagInicial{
-  display: flex;
   justify-content: center;
-  width:auto;
-  background-color: blueviolet;
+  align-items: flex-end;
 }
+#carta1, #carta2, #carta3{
+  position: relative;
+  display: inline-block;
+  background-color: aqua;
+  width: 170px;
+  height: 190px;
+  margin: 5px;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+#carta1:hover {
+  transform: rotateY(180deg);
+}
+#carta2:hover {
+  transform: rotateY(180deg);
+}
+#carta3:hover {
+  transform: rotateY(180deg);
+}
+#frenteCarta1, #frenteCarta2, #frenteCarta3{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: blueviolet;
+  color: blue
+}
+#versoCarta1, #versoCarta2, #versoCarta3{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: black;
+  color: darkcyan;
+  transform: rotateY(180deg);
+}
+
