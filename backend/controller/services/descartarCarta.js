@@ -3,10 +3,10 @@ const { get } = require('axios')
 
 async function descartarCartas(deck) {
 
-    const deck_id = deck.deck_id
+   const deck_id = deck.deck_id
+   const carta = deck.carta
 
-    const URL_DESCARTE_CARTAS = `https://deckofcardsapi.com/api/deck/${deck_id}/pile/descarte/add/?cards=6S`
-
+   const URL_DESCARTE_CARTAS = `https://deckofcardsapi.com/api/deck/${deck_id}/pile/descarte/add/?cards=${carta}`
 
    try {
       console.log("Cartas descartadas!")
@@ -19,4 +19,4 @@ async function descartarCartas(deck) {
    }
 }
 
-module.exports = {descartarCartas}
+module.exports = { descartarCartas }
