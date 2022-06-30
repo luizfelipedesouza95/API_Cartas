@@ -1,32 +1,18 @@
 const express = require("express");
 const router = express.Router();
 
-const newDeck = require("./controller/services/novoDeck");
-const tirarCarta = require("./controller/services/retirarCartas")
-const embCartas = require("./controller/services/embaralhar")
-const devCartas = require("./controller/services/devolverCartas")
-const descCartas = require("./controller/services/descartarCarta")
-const embPilha = require("./controller/services/embPilha")
-const devCartasPilha = require("./controller/services/devolvePilha")
-const listarPilha = require("./controller/services/listarPilha")
+const newDeck = require("./utils/novoDeck");
+const tirarCarta = require("./utils/retirarCartas")
+const embCartas = require("./utils/embaralhar")
+const devCartas = require("./utils/devolverCartas")
+const descCartas = require("./utils/descartarCarta")
+const embPilha = require("./utils/embPilha")
+const devCartasPilha = require("./utils/devolvePilha")
+const listarPilha = require("./utils/listarPilha")
 
 const deck = [
   "qetxpqsuy6ld"
 ]
-
-/* async function imgCartas(req, res, next) {
-
-  const IMG_CARTA = `https://deckofcardsapi.com/static/img/`
-
-  if (!IMG_CARTA) {
-    return res.status(400).json({ error: "Erro ao encontrar imagem!" });
-  }
-
-  req.IMG_CARTA = IMG_CARTA;
-
-  return next();
-
-} */
 
 async function verifyDeck(req, res, next) {
 
