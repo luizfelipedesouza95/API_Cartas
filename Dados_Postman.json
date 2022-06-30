@@ -2,58 +2,20 @@
 	"info": {
 		"_postman_id": "892ea05a-6702-4e7c-ad5d-2237f619341d",
 		"name": "API Jogo de Cartas",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16620825"
 	},
 	"item": [
-		{
-			"name": "Tirar Cartas",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "numCartas",
-							"value": "2",
-							"type": "text"
-						},
-						{
-							"key": "id",
-							"value": "zo2fb6p867jl",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:3003/tirarCartas",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3003",
-					"path": [
-						"tirarCartas"
-					]
-				}
-			},
-			"response": []
-		},
 		{
 			"name": "Novo Deck",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3003/novoDeck",
-					"protocol": "http",
+					"raw": "{{_base3003}}/novoDeck",
 					"host": [
-						"localhost"
+						"{{_base3003}}"
 					],
-					"port": "3003",
 					"path": [
 						"novoDeck"
 					]
@@ -74,18 +36,16 @@
 					"urlencoded": [
 						{
 							"key": "id",
-							"value": "zo2fb6p867jl",
+							"value": "3viwkfaza3al",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3003/embCartas",
-					"protocol": "http",
+					"raw": "{{_base3003}}/embCartas",
 					"host": [
-						"localhost"
+						"{{_base3003}}"
 					],
-					"port": "3003",
 					"path": [
 						"embCartas"
 					]
@@ -94,7 +54,55 @@
 			"response": []
 		},
 		{
-			"name": "Devolver Cartas",
+			"name": "Tirar Cartas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{_base3003}}/tirarCartas/?numCartas=2",
+					"host": [
+						"{{_base3003}}"
+					],
+					"path": [
+						"tirarCartas",
+						""
+					],
+					"query": [
+						{
+							"key": "numCartas",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Descartar Carta Tirada",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{_base3003}}/descartarCartas/?carta=3C",
+					"host": [
+						"{{_base3003}}"
+					],
+					"path": [
+						"descartarCartas",
+						""
+					],
+					"query": [
+						{
+							"key": "carta",
+							"value": "3C"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Devolver Cartas ao Deck",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -106,20 +114,69 @@
 					"urlencoded": [
 						{
 							"key": "id",
-							"value": "zo2fb6p867jl",
+							"value": "3viwkfaza3al",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3003/devolverCartas",
-					"protocol": "http",
+					"raw": "{{_base3003}}/devolverCartas",
 					"host": [
-						"localhost"
+						"{{_base3003}}"
 					],
-					"port": "3003",
 					"path": [
 						"devolverCartas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Pilha",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{_base3003}}/listarPilha",
+					"host": [
+						"{{_base3003}}"
+					],
+					"path": [
+						"listarPilha"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Embaralhar Pilha",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{_base3003}}/embPilha",
+					"host": [
+						"{{_base3003}}"
+					],
+					"path": [
+						"embPilha"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Devolver Cartas da Pilha ao Deck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{_base3003}}/devolvePilha",
+					"host": [
+						"{{_base3003}}"
+					],
+					"path": [
+						"devolvePilha"
 					]
 				}
 			},
