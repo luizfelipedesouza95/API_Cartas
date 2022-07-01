@@ -1,3 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply  m-0 p-0 bg-zinc-900 text-zinc-100
+}
+
+mesajogo {
+  @apply max-w-full max-h-full
+}
+
+
+
+
+
+/*
 *{
   margin: 0px;
   padding: 0px;
@@ -16,6 +33,7 @@
   justify-content: center;
   align-items: flex-end;
 }
+
 #carta1, #carta2, #carta3{
   position: relative;
   display: inline-block;
@@ -35,7 +53,7 @@
 #carta3:hover {
   transform: rotateY(180deg);
 }
-#frenteCarta1, #frenteCarta2, #frenteCarta3{
+#frenteCarta2, #frenteCarta3{
   position: absolute;
   width: 100%;
   height: 100%;
@@ -52,4 +70,6 @@
   color: darkcyan;
   transform: rotateY(180deg);
 }
+
+*/
 
